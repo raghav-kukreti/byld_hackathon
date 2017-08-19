@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   font-weight: normal;
+  transition: all .35s ease-in-out;
 }
 
 @font-face {
@@ -31,18 +32,15 @@ body {
 
 .hero {
   background: #44D62C;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100vh;
   width: 100%;
   display: table;
 
   .centered {
-    // background: mix(darken(rgba(#2ecc71,0.69), 25%), black, 52%);
     display: table-cell;
     vertical-align: middle;
     padding: 0rem 33rem 0 7rem;
     h1 {
-      // font-family: Montserrat;
       color: rgba(#fff, 1);
       font-size: 50px;
       line-height: 65px;
@@ -62,10 +60,10 @@ nav ul {
   height: 50px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; // border-bottom: 3px solid rgba(#fff, 0.555);
   right: 0;
   z-index: 100;
-  background: #44d62c;
+  background: #fff;
   margin: 0 auto;
   padding: 0 50px;
 }
@@ -86,6 +84,7 @@ a:link {
 
 nav ul li a {
   display: block;
+  color: #44D62C;
   position: relative;
 }
 
@@ -122,8 +121,8 @@ a {
   color: #2ecc71;
   background: #fff !important;
   &:hover {
-    background: transparent !important;
-    color: #fff;
+    // background: transparent !important;
+    color: #44D62C;
   }
 }
 
@@ -152,23 +151,142 @@ p.lead {
 
 
 .working {
-	height: 80vh;
-	width: 100%;
-	background: #f6f6f6; 
+  height: 50vh;
+  width: 100%;
+  display: table;
+  padding: 0 16rem;
+  background: #000;
+  .center {
+    font-size: 1.5rem;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
 }
 
 .img {
-	height: 40vh;
-	width: 100%;
+  height: 40vh;
+  width: 100%;
 }
 
 .aukaat {
-	background: url(aukaat.jpg) center center no-repeat fixed;
-	background-size: cover;
+  background: url(aukaat.jpg) center center no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  display: table;
+}
+
+.aukaat2 {
+  background: url(aukaat2.jpg) center center no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  display: table;
 }
 
 .overlay {
-	background: rgba(#000, .777);
-	height: 100%;
-	width: 100%;
+  background: rgba(#000, .777);
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  color: #fff;
+  font-family: monospace;
+  letter-spacing: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.team {
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+}
+
+.colophon {
+  height: 60vh;
+  width: 100%;
+  background: #fff;
+  padding: 8rem 20rem;
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.gradient {
+  background: #5f2c82;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #49a09d, #5f2c82);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.5s;
+}
+
+.delay-3 {
+  animation-delay: 0.7s;
+}
+
+.delay-4 {
+  animation-delay: 0.9s;
+}
+
+.delay-5 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+#secondh1 {
+  opacity: 0;
+}
+
+#secondpara {
+  opacity: 0;
+}
+
+#quote {
+  opacity: 0;
 }

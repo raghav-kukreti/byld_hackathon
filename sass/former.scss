@@ -1,0 +1,31 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  transition: all .35s ease-in-out;
+}
+
+@font-face {
+  src: url(sulsans.woff.woff);
+  font-family: SulSans;
+}
+
+@font-face {
+  src: url(apercu.ttf);
+  font-family: Apercu;
+}
+
+html,
+body {
+  font-size: 100%;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: SulSans;
+  background: #efefef;
+}

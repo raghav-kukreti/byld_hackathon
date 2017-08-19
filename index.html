@@ -7,50 +7,113 @@
   <title>GareebManager</title>
   <link rel="stylesheet" href="css/app.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
   <nav id="topbar">
-    <ul id="menu-menu" class="menu">
-      <li><a href="#0">Home</a></li>
-      <li><a href="#0">About</a></li>
-      <li><a href="#0">How it Works</a></li>
-      <li><a href="#0">Something</a></li>
-      <li><a href="#0">Team</a></li>
-      <li><a href="#0" class="">Colophon</a></li>
+    <ul id="menu-menu" class="menu fadeInDown animated delay-1">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#lol">Reviews</a></li>
+      <li><a href="#contact" class="">Colophon</a></li>
     </ul>
   </nav>
   <section class="hero">
     <div class="centered">
-      <h1>GareebManager maps your money <span>efficiently</span> and gives you instant feedback.</h1>
-      <br><br>
+      <h1 class="fadeInDown animated delay-2">GareebManager maps your money <span>efficiently</span> and gives you instant feedback.</h1>
       <br>
-      <p class="lead"> 
-		<a href="#0" class="button sec">Launch webapp</a>
-		&nbsp;
-		&nbsp;
-		&nbsp;
-		<a href="#0" class="button">Learn more</a>
+      <br>
+      <br>
+      <p class="lead">
+        <a href="#0" class="button sec fadeInUp animated delay-3">Launch webapp</a> &nbsp; &nbsp; &nbsp;
+        <a href="#0" class="button fadeInUp animated delay-3">Learn more</a>
       </p>
     </div>
     <div class="arrow-down"></div>
   </section>
-
-  <section class="about">
-  	<h1>GareebManager is a simple tool to map your expenditure.</h1>
-  	<p class="lead">
-  		GareebManager&copy; takes into account your monthly or weekly budget and subsequently defines a tailored budget for your essential, daily requirements.
- 
-  		Using GareebManager is simple and for everyone. Be it a college student or a working professional.
-  	</p>
+  <section class="about" id="about">
+    <h1 id="secondh1">GareebManager is a simple tool to map your expenditure.</h1>
+    <p class="lead" id="secondpara">
+      GareebManager&copy; takes into account your monthly or weekly budget and subsequently defines a tailored budget for your essential, daily requirements. Using GareebManager is simple and for everyone. Be it a college student or a working professional.
+    </p>
   </section>
   <section class="img aukaat">
-  	<div class="overlay"></div>
+    <div class="overlay">
+      LOL AUKAAT
+    </div>
   </section>
-  <section class="working">
-  	
+  <section class="working" id="lol">
+    <div class="center">
+      <h1 class="gradient" id="quote">&lsquo;GareebManager&copy; really made me intelligent about finance. I am still gareeb tho.&rsquo;</h1>
+    </div>
+  </section>
+  <section class="img aukaat2">
+    <div class="overlay">
+      DREAM ON
+    </div>
+  </section>
+  <section class="colophon" id="contact">
+    <h1>Get in touch</h1>
+    <br>
+    <p class="lead">
+      Phone : (+69) 001 494 3022
+      <br> Fax : Aukaat nahi
+    </p>
+    <br>
+    <br>
+    <p class="lead">
+      E-mail : bhikaari@kanjoos.com
+    </p>
   </section>
   <script src="app.js"></script>
+  <script>
+  $(window).scroll(function() {
+    $('#secondh1').each(function() {
+      var imagePos = $(this).offset().top;
+
+      var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow + 400) {
+        $(this).addClass("fadeInDown animated");
+      }
+    });
+    $('#secondpara').each(function() {
+      var imagePos = $(this).offset().top;
+
+      var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow + 400) {
+        $(this).addClass("fadeInUp animated delay-1");
+      }
+    });
+    $('#quote').each(function() {
+      var imagePos = $(this).offset().top;
+
+      var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow + 400) {
+        $(this).addClass("fadeInUp animated delay-1");
+      }
+    });
+
+  });
+
+  </script>
+  <script>
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') ||
+      location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+
+  </script>
 </body>
 
 </html>

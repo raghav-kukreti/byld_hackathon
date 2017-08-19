@@ -5,7 +5,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-weight: normal; }
+  font-weight: normal;
+  -webkit-transition: all .35s ease-in-out;
+  -o-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out; }
 
 @font-face {
   src: url(sulsans.woff.woff);
@@ -27,7 +30,6 @@ body {
 
 .hero {
   background: #44D62C;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100vh;
   width: 100%;
   display: table; }
@@ -60,7 +62,7 @@ nav ul {
   left: 0;
   right: 0;
   z-index: 100;
-  background: #44d62c;
+  background: #fff;
   margin: 0 auto;
   padding: 0 50px; }
 
@@ -77,6 +79,7 @@ a:link {
 
 nav ul li a {
   display: block;
+  color: #44D62C;
   position: relative; }
 
 a {
@@ -109,8 +112,7 @@ a {
   color: #2ecc71;
   background: #fff !important; }
   .button.sec:hover {
-    background: transparent !important;
-    color: #fff; }
+    color: #44D62C; }
 
 .about {
   height: 100vh;
@@ -131,9 +133,16 @@ p.lead {
   line-height: 1.3333333; }
 
 .working {
-  height: 80vh;
+  height: 50vh;
   width: 100%;
-  background: #f6f6f6; }
+  display: table;
+  padding: 0 16rem;
+  background: #000; }
+  .working .center {
+    font-size: 1.5rem;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; }
 
 .img {
   height: 40vh;
@@ -141,9 +150,132 @@ p.lead {
 
 .aukaat {
   background: url(aukaat.jpg) center center no-repeat fixed;
-  background-size: cover; }
+  background-size: cover;
+  width: 100%;
+  display: table; }
+
+.aukaat2 {
+  background: url(aukaat2.jpg) center center no-repeat fixed;
+  background-size: cover;
+  width: 100%;
+  display: table; }
 
 .overlay {
   background: rgba(0, 0, 0, 0.777);
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  display: table-cell;
+  color: #fff;
+  font-family: monospace;
+  letter-spacing: 40px;
+  text-align: center;
+  vertical-align: middle; }
+
+.team {
+  height: 100vh;
+  width: 100%;
+  background: #fff; }
+
+.colophon {
+  height: 60vh;
+  width: 100%;
+  background: #fff;
+  padding: 8rem 20rem; }
+  .colophon h1 {
+    font-size: 2rem; }
+
+.gradient {
+  background: #5f2c82;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#49a09d), to(#5f2c82));
+  background: -webkit-linear-gradient(left, #49a09d, #5f2c82);
+  background: -o-linear-gradient(left, #49a09d, #5f2c82);
+  background: linear-gradient(to right, #49a09d, #5f2c82);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.delay-1 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+
+.delay-2 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s; }
+
+.delay-3 {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s; }
+
+.delay-4 {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s; }
+
+.delay-5 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s; }
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown; }
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0); }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none; } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+#secondh1 {
+  opacity: 0; }
+
+#secondpara {
+  opacity: 0; }
+
+#quote {
+  opacity: 0; }

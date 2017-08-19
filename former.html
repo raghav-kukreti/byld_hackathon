@@ -1,14 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Form input</title>
+  <meta charset="UTF-8">
+  <title>Form input</title>
+  <link rel="stylesheet" href="css/former.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
 </head>
+
 <body>
-	<form action="POST">
-		<input type="number" placeholder="Roll number"><br>
-		<input type="number" placeholder="Budget"><br>
-		<input type="submit">
-	</form>
+  <div class="form_div">
+    <div class="wrapper">
+      <input type="number" placeholder="Roll number" data-inp="number">
+      <br>
+      <input type="text" placeholder="Name" data-inp="name">
+      <input type="number" placeholder="Budget" data-inp="budget">
+      <br>
+      <input type="submit" class="submit">
+    </div>
+  </div>
+  <section class="nav">
+    <ul>
+      <li id="budget"></li>
+      <li id="name">Name</li>
+      <li id="rollno"></li>
+    </ul>
+  </section>
+      <p class="empty">
+    	It seems you did not enter anything
+    </p>
+  <section class="greeting">
+    <h1>Hello there, <span id="greet_name"></span></h1>
+
+    <p class="copy">
+      Here's your financial summary for
+      <br> a budget of <b> <span id="copy_budget"></span></b>
+    </p>
+    <section class="lists">
+      <ul>
+        <li>Eat at <span id="placer"></span> <i>for </i> <span id="money"></span></li>
+        <li>Eat at <span id="placer1"></span> <i>for </i> <span id="money1"></span></li>
+        <li>Eat at <span id="placer2"></span> <i>for </i> <span id="money2"></span></li>
+        <li>Eat at <span id="placer3"></span> <i>for </i> <span id="money3"></span></li>
+        <li>Eat at <span id="placer4"></span> <i>for </i> <span id="money4"></span></li>
+        <li>Eat at <span id="placer5"></span> <i>for </i> <span id="money5"></span></li>
+        <li>Eat at <span id="placer6"></span> <i>for </i> <span id="money6"></span></li>
+      </ul>
+    </section>
+    <br> Congratulations, you saved Rs. <span id="left_over"></span>
+  </section>
+  <script>
+  function getroll(name) {
+    return $('input[data-inp="' + name + '"]').val();
+  }
+  $(".submit").on('click', function() {
+    // $('input').blur(function() {
+    //   if ($(this).val().length === 0) {
+    //     $(".greeting").addClass("bye");
+    //     $(".empty").addClass("show");
+    //   }
+    // });
+    var roll_number = getroll("number");
+    var budget = getroll("budget");
+    var name = getroll("name");
+    var baseprice = budget / 7;
+    $(".form_div").addClass("fadeOut animated bye");
+    $("#rollno").html(roll_number);
+    $("#name").html(name);
+    $("#budget").html("Rs." + budget);
+    $("#copy_budget").html("Rs. " + budget);
+    $("#greet_name").html(name);
+    if (budget < 350) {
+      alert('You have insufficient funds for food. Heckin bamboozled.');
+    }
+    var data = [{ "appname": "Wrapsafe", "money": 104 },
+      { "appname": "Greenlam", "money": 210 },
+      { "appname": "Bigtax", "money": 469 },
+      { "appname": "Fix San", "money": 300 },
+      { "appname": "Latlux", "money": 304 },
+      { "appname": "Zamit", "money": 103 },
+      { "appname": "Fixflex", "money": 290 },
+      { "appname": "Kanlam", "money": 174 },
+      { "appname": "Voltsillam", "money": 215 },
+      { "appname": "Zontrax", "money": 582 },
+      { "appname": "Stringtough", "money": 571 },
+      { "appname": "Mat Lam Tam", "money": 408 },
+      { "appname": "Sonsing", "money": 320 },
+      { "appname": "Bitchip", "money": 504 },
+      { "appname": "Tampflex", "money": 503 },
+      { "appname": "Namfix", "money": 210 },
+      { "appname": "Asoka", "money": 178 },
+      { "appname": "Mat Lam Tam", "money": 265 },
+      { "appname": "Y-Solowarm", "money": 257 },
+      { "appname": "Cardify", "money": 505 },
+      { "appname": "Solarbreeze", "money": 257 },
+      { "appname": "Prodder", "money": 349 },
+      { "appname": "Gembucket", "money": 270 },
+      { "appname": "Bytecard", "money": 329 },
+      { "appname": "Y-find", "money": 201 },
+      { "appname": "Prodder", "money": 532 },
+      { "appname": "Quo Lux", "money": 460 },
+      { "appname": "Home Ing", "money": 368 }
+    ];
+    // var mate = 0;
+    // for (var i = 0; i < data.length -18; i++) {
+    // 	// alert(data[i]['appname']);
+    // 	$("#placer").html(data[i]['appname']);
+    // }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer1").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer2").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer3").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer4").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer5").html(entry);
+
+    }
+    for (var i = 0; i < 7; i++) {
+      var entry = data[Math.floor(Math.random() * data.length)]['appname'];
+
+      $("#placer6").html(entry);
+
+    }
+    var minNumber = 50;
+    var maxNumber = baseprice;
+
+    var sum_of_money = 0;
+
+    function randomNumberFromRange(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    //randomNumber
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    sum_of_money += randomNumber;
+    $("#money").html(randomNumber);
+    
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    sum_of_money += randomNumber;
+
+    $("#money1").html(randomNumber);
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    sum_of_money += randomNumber;
+
+    $("#money2").html(randomNumber);
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    
+sum_of_money += randomNumber;
+    $("#money3").html(randomNumber);
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    
+sum_of_money += randomNumber;
+    $("#money4").html(randomNumber);
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    
+sum_of_money += randomNumber;
+    $("#money5").html(randomNumber);
+    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
+    
+sum_of_money += randomNumber;
+    $("#money6").html(randomNumber);
+
+    var left_over = budget - sum_of_money;
+
+    $("#left_over").html(left_over);
+    $("li").mouseover(function() {
+    	// $(this).toggleClass("wobble animated");
+    }); 
+  });
+
+  </script>
 </body>
+
 </html>
